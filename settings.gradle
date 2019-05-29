@@ -1,0 +1,5 @@
+rootProject.name = 'rock-paper-scissors-game'
+
+include 'game-server-web'
+
+project(":game-server-web").projectDir = "$rootDir/game-server-web" as File
