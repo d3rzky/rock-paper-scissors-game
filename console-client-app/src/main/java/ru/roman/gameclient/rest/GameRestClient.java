@@ -11,6 +11,8 @@ import ru.roman.gameclient.rest.model.GameMove;
 import ru.roman.gameclient.rest.model.PlayResult;
 import ru.roman.gameclient.rest.model.Statistic;
 
+import static org.springframework.web.util.UriComponentsBuilder.fromPath;
+
 /**
  * Access game server via REST API
  */
@@ -28,10 +30,11 @@ class GameRestClient implements GameClient {
     public PlayResult play(String userId, GameMove move) {
 
         ResponseEntity<PlayResult> response = restTemplate.exchange(
-                "/game/play", HttpMethod.GET,
-                null,
-                new ParameterizedTypeReference<PlayResult>() {
-                }
+                fromPath("/game/play")
+                        .queryParam("userId", userId)
+                        .queryParam("userMove", move).toUriString(),
+                HttpMethod.GET, null,
+                new ParameterizedTypeReference<PlayResult>() {}
         );
         PlayResult result = response.getBody();
 
@@ -43,10 +46,10 @@ class GameRestClient implements GameClient {
     public Statistic getStatistic(String userId) {
 
         ResponseEntity<Statistic> response = restTemplate.exchange(
-                "/game/statistic", HttpMethod.GET,
-                null,
-                new ParameterizedTypeReference<Statistic>() {
-                }
+                fromPath("/game/statistic")
+                        .queryParam("userId", userId).toUriString(),
+                HttpMethod.GET,null,
+                new ParameterizedTypeReference<Statistic>() {}
         );
         Statistic statistic = response.getBody();
 

@@ -18,12 +18,9 @@ import java.util.stream.Collectors;
 @Service
 class StatisticCacheService implements StatisticService {
 
-    /**
-     * Cache UserID to Statistic
-     */
+    /** Cache UserID to Statistic */
     private final Cache<String, GameStatisticData> cache = CacheBuilder.newBuilder()
             .maximumSize(1000L).build();
-
 
     @Override
     public void addRoundResult(RoundResult roundResult) {

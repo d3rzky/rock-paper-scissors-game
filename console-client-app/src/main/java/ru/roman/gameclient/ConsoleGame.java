@@ -13,6 +13,9 @@ import java.util.UUID;
 import static ru.roman.gameclient.rest.model.GameMove.parse;
 import static ru.roman.gameclient.rest.model.PlayResult.WIN;
 
+/**
+ * User interaction
+ */
 @Component
 class ConsoleGame implements SmartInitializingSingleton {
     private String userId;

@@ -10,6 +10,9 @@ import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
+/**
+ * Application starting point
+ */
 @SpringBootApplication(scanBasePackageClasses = {StartClientApp.class})
 public class StartClientApp {
     private static final Logger log = LoggerFactory.getLogger(StartClientApp.class);
