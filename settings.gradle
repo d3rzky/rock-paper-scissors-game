@@ -3,4 +3,5 @@ rootProject.name = 'rock-paper-scissors-game'
 include 'game-server-web'
 include 'console-client-app'
 
+project(":game-server-web").projectDir = "$rootDir/game-server-web" as File
 project(":console-client-app").projectDir = "$rootDir/console-client-app" as File
