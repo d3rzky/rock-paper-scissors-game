@@ -23,27 +23,6 @@ public enum GameMove {
      * Move which beats
      */
     private GameMove bittenBy;
-    /**
-     * Shortcut of move
-     */
-    private final String alias;
-
-    GameMove() {
-        this.alias = String.valueOf(this.name().toCharArray()[0]);
-    }
-
-    /**
-     * Finds the move corresponding to string value
-     */
-    public static GameMove parse(String value) {
-        for (GameMove move : values()) {
-            if (move.alias.equals(value) ||
-                    move.toString().equals(value)) {
-                return move;
-            }
-        }
-        return null;
-    }
 
     /**
      * Returns the result of the game relative to the opponent’s move

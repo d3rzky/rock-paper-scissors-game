@@ -29,9 +29,4 @@ public interface GameStatistic {
      * Returns statistic of machine moves
      */
     Map<GameMove, Long> getMachineMoves();
-
-    /**
-     * Returns text representation of statistic
-     */
-    String asText();
 }
